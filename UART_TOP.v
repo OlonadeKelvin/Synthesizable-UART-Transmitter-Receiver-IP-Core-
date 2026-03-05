@@ -19,12 +19,12 @@ module uart_top #(
     output wire       rx_ready
 );
 
-    // --- Internal Wires ---
+    // Internal Wires
     // These act like physical jumper wires connecting our internal modules
     wire tx_tick;
     wire rx_tick;
 
-    // --- 1. Instantiate the Baud Rate Generator ---
+    // Instantiate the Baud Rate Generator
     baud_gen #(
         .CLK_FREQ(CLK_FREQ),
         .BAUD_RATE(BAUD_RATE)
@@ -35,7 +35,7 @@ module uart_top #(
         .rx_tick(rx_tick)
     );
 
-    // --- 2. Instantiate the Transmitter ---
+    // Instantiate the Transmitter 
     UART_TX tx_inst (
         .clk(clk),
         .rst_n(rst_n),
@@ -46,7 +46,7 @@ module uart_top #(
         .tx_done(tx_done)
     );
 
-    // --- 3. Instantiate the Receiver ---
+    // Instantiate the Receiver
     UART_RX rx_inst (
         .clk(clk),
         .rst_n(rst_n),
