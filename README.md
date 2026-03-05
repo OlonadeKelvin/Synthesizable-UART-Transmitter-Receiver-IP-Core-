@@ -7,9 +7,13 @@ This project was developed to showcase practical, real-world ASIC/FPGA digital d
 
 ## ✨ Key Features
 Standard Protocol: 8 Data Bits, No Parity, 1 Stop Bit (8N1).
+
 Configurable: Parameterized system clock frequency and baud rate (default: 50MHz clk / 115200 baud).
+
 Fully Synchronous: Safe clocking utilizing a unified Baud Rate Generator to issue single-cycle enable ticks (avoids dangerous logic-generated clocks).
+
 Robust Receiver: Implements a 16x oversampling FSM to filter noise and safely sample the middle of data bits, mitigating clock drift between devices.
+
 Self-Checking Verification: Includes a full top-level loopback testbench proving 100% functional correctness.
 
 ## 🏗️ Architecture & Modules
