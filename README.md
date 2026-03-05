@@ -1,0 +1,1 @@
+# Synthesizable-UART-Transmitter-Receiver-IP-Core-
