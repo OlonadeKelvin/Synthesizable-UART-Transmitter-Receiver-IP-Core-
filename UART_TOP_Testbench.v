@@ -17,7 +17,7 @@ module uart_top_tb;
     wire [7:0] rx_data;
     wire       rx_ready;
 
-    // --- The Loopback Wire ---
+    // The Loopback Wire
     // This single wire connects the TX output to the RX input
     wire       serial_line;
 
@@ -60,9 +60,8 @@ module uart_top_tb;
         rst_n = 1;
         #100;
 
-        // ----------------------------------------------------
         // TEST CASE 1: Send 0xA5 (Binary: 10100101)
-        // ----------------------------------------------------
+
         $display("--- Test 1: Sending 0xA5 ---");
         tx_data  = 8'hA5;
         tx_start = 1;
@@ -81,9 +80,7 @@ module uart_top_tb;
         // Wait a bit before sending the next byte
         #50000; 
 
-        // ----------------------------------------------------
         // TEST CASE 2: Send 0x3C (Binary: 00111100)
-        // ----------------------------------------------------
         $display("--- Test 2: Sending 0x3C ---");
         tx_data  = 8'h3C;
         tx_start = 1;
